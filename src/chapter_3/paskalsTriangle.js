@@ -5,9 +5,11 @@
 // Тут, возможно, поможет рекурсия
 
 function paskalsTriangle(x, y) {
-
+    if (x == 0 || x == y) {
+        return 1
+    } else {
+        return paskalsTriangle(x - 1, y - 1) + paskalsTriangle(x, y - 1)
+    }
 }
 
-
-paskalsTriangle(3, 2) // 3
-
+console.log(paskalsTriangle(2, 3)) // 3

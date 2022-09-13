@@ -3,22 +3,83 @@
 // Например, функция one может принять в кач - ве аргумента функцию sum, тогда в return будет sum(1).Если же в функцию не передали ничего, то она просто вернет 1.
 // Также надо написать 4 функции основных арифмитических операторов, которые принимают в кач-ве аргумента первое число, а возвращают функцию, которая принмает в кач-ве аргумента второе число и возвращает их сумму/разность/частое/произведение
 
-function one(callback) {}
-function two(callback) {}
-function three(callback) {}
-function four(callback) {}
-function five(callback) {}
-function siv(callback) {}
-function seven(callback) {}
-function eight(callback) {}
-function nine(callback) {}
+function one(callback) {
+    if (callback) {
+        return callback(1)
+    }
+    return 1;
+}
+function two(callback) {
+    if (callback) {
+        return callback(2)
+    }
+    return 2;
+}
+function three(callback) {
+    if (callback) {
+        return callback(3)
+    }
+    return 3;
+}
+function four(callback) {
+    if (callback) {
+        return callback(4)
+    }
+    return 4;
+}
+function five(callback) {
+    if (callback) {
+        return callback(5)
+    }
+    return 5;
+}
+function siv(callback) {
+    if (callback) {
+        return callback(6)
+    }
+    return 6;
+}
+function seven(callback) {
+    if (callback) {
+        return callback(7)
+    }
+    return 7;
+}
+function eight(callback) {
+    if (callback) {
+        return callback(8)
+    }
+    return 8;
+}
+function nine(callback) {
+    if (callback) {
+        return callback(9)
+    }
+    return 9;
+}
 
-function sum(a) {}
+function sum(a) {
+    return function(b) {
+        return a + b
+    }
+}
 
-function minus(a) {}
+function minus(a) {
+    return function(b) {
+        return a - b
+    }
+}
 
-function divide(a) {}
+function divide(a) {
+    return function(b) {
+        return a / b
+    }
+}
 
-function mult(a) {}
+function mult(a) {
+    return function(b) {
+        return a * b
+    }
+}
 
-one(mult(three(plus(four())))); // В итоге вернется 7
+console.log(one(mult(three(plus(four()))))) // В итоге вернется 7
